@@ -32,4 +32,14 @@ public class ConverterTest {
     public void should_convert_6_in_roman_VI() throws Exception {
         assertThat(Converter.toRoman(6)).isEqualTo("VI");
     }
+
+    @Test
+    public void should_convert_7_in_roman_VII() throws Exception {
+        assertThat(Converter.toRoman(7)).isEqualTo("VII");
+    }
+
+    @Test
+    public void should_convert_8_in_roman_VIII() throws Exception {
+        assertThat(Converter.toRoman(8)).isEqualTo("VIII");
+    }
 }
