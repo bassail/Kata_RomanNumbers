@@ -21,7 +21,7 @@ public enum RomanArabicValue {
 
     RomanArabicValue(int arabic, String roman) {
         this.arabic = arabic;
-        this.roman = roman;
+        this.roman  = roman;
     }
 
     public String getRoman() {
