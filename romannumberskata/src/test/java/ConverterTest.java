@@ -59,7 +59,7 @@ public class ConverterTest {
     }
 
     @Test
-    @Parameters({"17, XVII", "22, XXII", "70, LXX", "35, XXXV", "58, LVIII", "1903, MCMIII"})
+    @Parameters({"17, XVII", "22, XXII", "70, LXX", "35, XXXV", "58, LVIII", "1903, MCMIII", "3999, MMMCMXCIX"})
     public void should_test_several(int arabic, String roman) throws Exception {
         assertThat(Converter.toRoman(arabic)).isEqualTo(roman);
 
