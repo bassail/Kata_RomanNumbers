@@ -4,8 +4,8 @@ public class Converter {
         StringBuilder result = new StringBuilder();
 
         int rest = arabicNumber;
-        for (RomanValues romanValue: RomanValues.values()) {
-            rest = buildStringAndRestCalculation(rest, romanValue.getArabic(), romanValue.getRoman(), result);
+        for (RomanArabicValue romanValue: RomanArabicValue.values()) {
+            rest = buildStringAndRestCalculation(rest, romanValue.arabic, romanValue.getRoman(), result);
         }
         return result.toString();
     }
@@ -21,8 +21,19 @@ public class Converter {
 
     public static int toArabic(String romanNumber) {
         int result = 0;
-        for (char character : romanNumber.toCharArray()){
-            if (character == 'I') result ++;
+        for (int i = 0; i < romanNumber.length(); i++) {
+            RomanArabicValue romanArabicValue = RomanArabicValue.findByRoman(romanNumber.substring(i, i+1));
+            RomanArabicValue romanArabicNextValue = romanArabicValue;
+
+            if(romanNumber.length() > (i+1)){
+                 romanArabicNextValue = RomanArabicValue.findByRoman(romanNumber.substring(i+1, i+2));
+            }
+            if (romanArabicValue.arabic < romanArabicNextValue.arabic) {
+              result += RomanArabicValue.findByRoman(romanNumber.substring(i, i+2)).arabic;
+              i+=1;
+            }else{
+                result += romanArabicValue.arabic;
+            }
         }
         return result;
     }

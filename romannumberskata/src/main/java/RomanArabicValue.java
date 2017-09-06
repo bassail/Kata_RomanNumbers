@@ -1,4 +1,6 @@
-public enum RomanValues {
+import java.util.Arrays;
+
+public enum RomanArabicValue {
     THOUSAND(1000, "M"),
     NINE_HUNDRED(900, "CM"),
     FIVE_HUNDRED(500, "D"),
@@ -17,24 +19,19 @@ public enum RomanValues {
     int arabic;
     String roman;
 
-    RomanValues(int arabic, String roman) {
+    RomanArabicValue(int arabic, String roman) {
         this.arabic = arabic;
         this.roman = roman;
-    }
-
-    public int getArabic() {
-        return arabic;
-    }
-
-    public void setArabic(int arabic) {
-        this.arabic = arabic;
     }
 
     public String getRoman() {
         return roman;
     }
 
-    public void setRoman(String roman) {
-        this.roman = roman;
+    public static RomanArabicValue findByRoman(final String romanToFind){
+        return Arrays.stream(values())
+                .filter(number -> number.roman.equals(romanToFind))
+                .findAny()
+                .orElse(values()[0]);
     }
 }
