@@ -27,4 +27,9 @@ public class ConverterTest {
     public void should_convert_5_in_roman_V() throws Exception {
         assertThat(Converter.toRoman(5)).isEqualTo("V");
     }
+
+    @Test
+    public void should_convert_6_in_roman_VI() throws Exception {
+        assertThat(Converter.toRoman(6)).isEqualTo("VI");
+    }
 }
