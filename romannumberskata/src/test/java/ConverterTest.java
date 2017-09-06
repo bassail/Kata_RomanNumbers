@@ -1,7 +1,12 @@
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+@RunWith(JUnitParamsRunner.class)
 public class ConverterTest {
     @Test
     public void should_convert_1_in_roman_I() throws Exception {
@@ -51,5 +56,12 @@ public class ConverterTest {
     @Test
     public void should_convert_10_in_roman_X() throws Exception {
         assertThat(Converter.toRoman(10)).isEqualTo("X");
+    }
+
+    @Test
+    @Parameters({"17, XVII", "22, XXII", "70, LXX", "35, XXXV", "58, LVIII", "1903, MCMIII"})
+    public void should_test_several(int arabic, String roman) throws Exception {
+        assertThat(Converter.toRoman(arabic)).isEqualTo(roman);
+
     }
 }
