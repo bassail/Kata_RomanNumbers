@@ -47,4 +47,9 @@ public class ConverterTest {
     public void should_convert_9_in_roman_IX() throws Exception {
         assertThat(Converter.toRoman(9)).isEqualTo("IX");
     }
+
+    @Test
+    public void should_convert_10_in_roman_X() throws Exception {
+        assertThat(Converter.toRoman(10)).isEqualTo("X");
+    }
 }
