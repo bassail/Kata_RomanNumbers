@@ -18,4 +18,8 @@ public class Converter {
         }
         return result;
     }
+
+    public static int toArabic(String romanNumber) {
+        return 1;
+    }
 }

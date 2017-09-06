@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 @RunWith(JUnitParamsRunner.class)
-public class ConverterTest {
+public class ConverterToRomanTest {
     @Test
     public void should_convert_1_in_roman_I() throws Exception {
         assertThat(Converter.toRoman(1)).isEqualTo("I");
@@ -62,6 +62,5 @@ public class ConverterTest {
     @Parameters({"17, XVII", "22, XXII", "70, LXX", "35, XXXV", "58, LVIII", "1903, MCMIII", "3999, MMMCMXCIX"})
     public void should_test_several(int arabic, String roman) throws Exception {
         assertThat(Converter.toRoman(arabic)).isEqualTo(roman);
-
     }
 }
