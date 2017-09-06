@@ -4,9 +4,9 @@ public class Converter {
         StringBuilder result = new StringBuilder();
 
         int rest = arabicNumber;
-        rest = buildStringAndRestCalculation(rest, 9, "IX", result);
-        rest = buildStringAndRestCalculation(rest, 5, "V", result);
-        rest = buildStringAndRestCalculation(rest, 4, "IV", result);
+        for (RomanValues romanValue: RomanValues.values()) {
+            rest = buildStringAndRestCalculation(rest, romanValue.getArabic(), romanValue.getRoman(), result);
+        }
 
         for (int i = 0; i < rest; i++) {
             result.append("I");
