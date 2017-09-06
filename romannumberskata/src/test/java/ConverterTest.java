@@ -9,12 +9,7 @@ public class ConverterTest {
     }
 
     @Test
-    public void should_convert_5_to_V() throws Exception {
-        assertThat(Converter.toRoman(5)).isEqualTo("V");
-    }
-
-    @Test
-    public void should_convert_10_to_X() throws Exception {
-        assertThat(Converter.toRoman(10)).isEqualTo("X");
+    public void should_convert_2_in_roman_II() throws Exception {
+        assertThat(Converter.toRoman(2)).isEqualTo("II");
     }
 }

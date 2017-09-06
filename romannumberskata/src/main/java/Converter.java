@@ -1,9 +1,10 @@
 public class Converter {
 
     public static String toRoman(int arabicNumber) {
-        if      (arabicNumber ==  1) return "I";
-        else if (arabicNumber == 5) return "V";
-        else if (arabicNumber == 10) return "X";
-        return "";
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < arabicNumber; i++) {
+             result.append("I");
+        }
+        return result.toString();
     }
 }
