@@ -13,4 +13,9 @@ public class ConverterToArabicTest {
     public void should_convert_II_to_2() throws Exception {
         assertThat(Converter.toArabic("II")).isEqualTo(2);
     }
+
+    @Test
+    public void should_convert_III_to_3() throws Exception {
+        assertThat(Converter.toArabic("III")).isEqualTo(3);
+    }
 }
