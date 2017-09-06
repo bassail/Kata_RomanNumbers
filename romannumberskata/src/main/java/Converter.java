@@ -14,8 +14,8 @@ public class Converter {
             rest = rest - 5;
         }
 
-        if (rest == 4) {
-            result.append("IV").toString();
+        if (rest >= 4) {
+            result.append("IV");
             rest = rest - 4;
         }
         for (int i = 0; i < rest; i++) {
@@ -23,4 +23,5 @@ public class Converter {
         }
         return result.toString();
     }
+
 }
