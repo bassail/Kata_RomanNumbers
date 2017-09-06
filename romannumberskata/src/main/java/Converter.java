@@ -4,8 +4,12 @@ public class Converter {
         StringBuilder result = new StringBuilder();
 
         int rest = arabicNumber;
+        if (rest >= 9) {
+            result.append("IX");
+            rest = rest - 9;
+        }
 
-        if (arabicNumber >= 5) {
+        if (rest >= 5) {
             result.append("V");
             rest = rest - 5;
         }
