@@ -12,4 +12,19 @@ public class ConverterTest {
     public void should_convert_2_in_roman_II() throws Exception {
         assertThat(Converter.toRoman(2)).isEqualTo("II");
     }
+
+    @Test
+    public void should_convert_3_in_roman_III() throws Exception {
+        assertThat(Converter.toRoman(3)).isEqualTo("III");
+    }
+
+    @Test
+    public void should_convert_4_in_roman_IV() throws Exception {
+        assertThat(Converter.toRoman(4)).isEqualTo("IV");
+    }
+
+    @Test
+    public void should_convert_5_in_roman_V() throws Exception {
+        assertThat(Converter.toRoman(5)).isEqualTo("V");
+    }
 }
