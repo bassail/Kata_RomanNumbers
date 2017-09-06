@@ -4,24 +4,22 @@ public class Converter {
         StringBuilder result = new StringBuilder();
 
         int rest = arabicNumber;
-        if (rest >= 9) {
-            result.append("IX");
-            rest = rest - 9;
-        }
+        rest = buildStringAndRestCalculation(rest, 9, "IX", result);
+        rest = buildStringAndRestCalculation(rest, 5, "V", result);
+        rest = buildStringAndRestCalculation(rest, 4, "IV", result);
 
-        if (rest >= 5) {
-            result.append("V");
-            rest = rest - 5;
-        }
-
-        if (rest >= 4) {
-            result.append("IV");
-            rest = rest - 4;
-        }
         for (int i = 0; i < rest; i++) {
             result.append("I");
         }
         return result.toString();
     }
 
+    public static int buildStringAndRestCalculation(int arabicNumber, int romanToValue, String romanString, StringBuilder strb){
+        int result = arabicNumber;
+        if (result >= romanToValue) {
+            strb.append(romanString);
+            result -= romanToValue;
+        }
+        return result;
+    }
 }
