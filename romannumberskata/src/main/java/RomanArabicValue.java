@@ -8,7 +8,7 @@ public enum RomanArabicValue {
     HUNDRED(100, "C"),
     NINETY(90, "XC"),
     FIFTY(50, "L"),
-    FOURTY(40, "XL"),
+    FORTY(40, "XL"),
     TEN(10, "X"),
     NINE(9, "IX"),
     FIVE(5, "V"),
