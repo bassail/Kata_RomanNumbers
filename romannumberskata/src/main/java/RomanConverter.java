@@ -1,4 +1,4 @@
-public class RomanConverter {
+class RomanConverter {
 
     String toRoman(int arabicNumber) {
         StringBuilder result = new StringBuilder();

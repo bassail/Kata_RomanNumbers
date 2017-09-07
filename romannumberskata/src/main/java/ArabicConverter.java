@@ -1,4 +1,4 @@
-public class ArabicConverter {
+class ArabicConverter {
 
     int toArabic(String romanNumber) {
         int result = 0;
