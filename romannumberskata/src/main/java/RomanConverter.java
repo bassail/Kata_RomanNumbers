@@ -5,12 +5,12 @@ public class RomanConverter {
 
         int rest = arabicNumber;
         for (RomanArabicValue romanValue : RomanArabicValue.values()) {
-            rest = buildStringAndRestCalculation(rest, romanValue.arabic, romanValue.getRoman(), result);
+            rest = buildStringResult(rest, romanValue.arabic, romanValue.getRoman(), result);
         }
         return result.toString();
     }
 
-    private int buildStringAndRestCalculation(int arabicNumber, int romanToValue, String romanString, StringBuilder strb) {
+    private int buildStringResult(int arabicNumber, int romanToValue, String romanString, StringBuilder strb) {
         int result = arabicNumber;
         while (result >= romanToValue) {
             strb.append(romanString);
