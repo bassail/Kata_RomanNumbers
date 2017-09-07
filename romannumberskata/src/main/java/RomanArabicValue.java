@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 public enum RomanArabicValue {
     THOUSAND(1000, "M"),
@@ -8,9 +8,9 @@ public enum RomanArabicValue {
     HUNDRED(100, "C"),
     NINETY(90, "XC"),
     FIFTY(50, "L"),
+    NINE(9, "IX"),
     FORTY(40, "XL"),
     TEN(10, "X"),
-    NINE(9, "IX"),
     FIVE(5, "V"),
     FOUR(4, "IV"),
     ONE(1, "I");
@@ -21,17 +21,29 @@ public enum RomanArabicValue {
 
     RomanArabicValue(int arabic, String roman) {
         this.arabic = arabic;
-        this.roman  = roman;
+        this.roman = roman;
     }
 
     public String getRoman() {
         return roman;
     }
 
-    public static RomanArabicValue findByRoman(final String romanToFind){
+    public static RomanArabicValue findByRoman(final String romanToFind) {
         return Arrays.stream(values())
                 .filter(number -> number.roman.equals(romanToFind))
                 .findAny()
                 .orElse(values()[0]);
+    }
+
+    public static List<RomanArabicValue> getOrderedListOfValues() {
+        List<RomanArabicValue> listToOrder = new ArrayList<>();
+        EnumSet.allOf(RomanArabicValue.class)
+                .forEach(value -> listToOrder.add(value));
+        return orderList(listToOrder);
+    }
+
+    public static List<RomanArabicValue> orderList(List<RomanArabicValue> listToOrder){
+        Collections.sort(listToOrder, (o1, o2) -> o2.arabic - o1.arabic);
+        return listToOrder;
     }
 }

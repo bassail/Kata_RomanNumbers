@@ -11,7 +11,7 @@ public class RomanConverterToArabicTest {
     private ArabicConverter arabicConverter;
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
         arabicConverter = new ArabicConverter();
     }
 

@@ -3,7 +3,7 @@ class RomanConverter {
     private StringBuilder resultStringBuilder = new StringBuilder();
     String toRoman(int arabicNumber) {
         int rest = arabicNumber;
-        for (RomanArabicValue romanValue : RomanArabicValue.values()) {
+        for (RomanArabicValue romanValue : RomanArabicValue.getOrderedListOfValues()) {
             rest = buildStringResult(rest, romanValue.arabic, romanValue.getRoman());
         }
         return resultStringBuilder.toString();

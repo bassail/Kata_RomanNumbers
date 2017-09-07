@@ -12,7 +12,7 @@ public class RomanConverterToRomanTest {
     private RomanConverter romanConverter;
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
         romanConverter = new RomanConverter();
     }
 
